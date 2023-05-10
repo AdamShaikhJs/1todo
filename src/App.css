@@ -1,38 +1,103 @@
-.App {
+h1 {
   text-align: center;
+  font-weight: 500;
+  color: #666466;
+  text-shadow: 0.4px 1px 0.9px greenyellow;
+}
+input,.btn{
+  font-size: 18px;
+  font-size: max(16px, 1em);
+  font-family: inherit;
+  padding: 0.50em 0.25em;
+  background-color: #fff;
+  border: 2px solid #8b8a8b;
+  border-radius: 4px;
+  margin:5px;
+  transition: all 250ms;
+ text-decoration: none;
+}
+input{
+  width: 60% ;
+}
+.btn{
+ width: 30%;
+ text-transform: capitalize;
+}
+input:hover,
+input:focus {
+  box-shadow: #fa6400 0 4px 14px;
+  transform: translateY(-3px);
+
+}
+.btn:hover {
+  box-shadow: #fa6400 0 4px 14px;
+  transform: translateY(-3px);
+
+}
+.box {
+  position: relative;
+  margin: 40px auto;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  border-radius: 2px;
+  padding: 20px;
+  border: 1px solid #f8f1f8;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.box::before,
+.box::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  width: 40%;
+  height: 10px;
+  box-shadow: 0 5px 14px rgba(0,0,0,.7);
+  z-index: -1;
+  transition: all .3s ease-in-out;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.box::before {
+  left: 25px;
+  transform: skew(-5deg) rotate(-5deg);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.box::after {
+  right: 25px;
+  transform: skew(5deg) rotate(5deg);
 }
 
-.App-link {
-  color: #61dafb;
+.box:hover::before,
+.box:hover::after {
+  box-shadow: 1px 2px 14px rgba(0,0,0,.4);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.box:hover::before {
+  left: 8px;
+}
+
+.box:hover::after {
+  right: 8px;
+}
+
+
+.list{
+  font-size: max(20px, 1em);
+padding: 10px;
+margin: 3px;
+margin-top: 5px;
+width: 90%;
+}
+
+.val{
+  width: 70%;
+  display: inline-block;
+  text-transform: capitalize;
+}
+.edit{
+   margin-right: 20px;
+}
+.delete{
+  color: red;
 }
